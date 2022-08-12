@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{%if judul%}{{judul}} - {%endif%}Flog by NgodingPython</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md shadow" style="background: #3591ae;">
+        <div class="container"><a class="navbar-brand" href="{{url_for('home')}}">Flog by NgodingPython</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link {%if judul=='Beranda'%} active {%endif%}" href="{{url_for('home')}}">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link {%if judul=='Tentang'%} active {%endif%}" href="{{url_for('tentang')}}">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link {%if judul=='Masuk'%} active {%endif%}" href="{{url_for('masuk')}}">Masuk</a></li>
+                    <li class="nav-item"><a class="nav-link {%if judul=='Daftar'%} active {%endif%}" href="{{url_for('daftar')}}">Daftar</a></li>
+                    <li class="nav-item"><a class="nav-link {%if judul=='Profil'%} active {%endif%}" href="{{url_for('profil')}}">Profil</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="container">
+            <div class="row" style="padding-top: 15px;">
+                <div class="col-md-8" style="border-style: none;">
+                    {%block content%}{%endblock%}
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Menu Cepat</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item"><span>Post Populer</span></li>
+                                <li class="list-group-item"><span>Pengumuman</span></li>
+                                <li class="list-group-item"><span>Acara</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>
